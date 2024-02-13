@@ -28,7 +28,7 @@ router.post('/agregarusuario', async (req, res) => {
     }
 });
 
-router.get('/obtenerusuarios', async (req, res) => {
+router.get('/crud-mern-stack/obtenerusuarios', async (req, res) => {
     const users = await Usuario.find();
     res.json(users);
     if (!users) {
@@ -36,7 +36,7 @@ router.get('/obtenerusuarios', async (req, res) => {
     }
 });
 
-router.post('/obtenerdatausuario', async (req, res) => {
+router.post('/crud-mern-stack/obtenerdatausuario', async (req, res) => {
     const user = await Usuario.find().where('idUser').equals(req.body.idUser);
     res.json(user);
     if (!user) {
