@@ -14,6 +14,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+console.log('Middleware CORS aplicado correctamente con las siguientes opciones:', corsOptions);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
