@@ -2,11 +2,13 @@ import express from 'express';
 import conectarDB from './conexion.js';
 import router from './rutas/usuario.js';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 const app = express();
 
 conectarDB();
 
+app.use(cors()); // Permitir solicitudes de cualquier origen
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
