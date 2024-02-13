@@ -9,7 +9,7 @@ const app = express();
 conectarDB();
 
 const corsOptions = {
-    origin: 'https://mariavalentinova.github.io/crud-mern-stack/',
+    origin: 'https://crud-mern-stack-react.netlify.app/',
     optionsSuccessStatus: 200
 };
 
