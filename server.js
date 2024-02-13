@@ -8,12 +8,17 @@ const app = express();
 
 conectarDB();
 
-app.use(cors()); // Permitir solicitudes de cualquier origen
+const corsOptions = {
+    origin: 'https://mariavalentinova.github.io/crud-mern-stack/',
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 //Importación del archivo de rutas y modelo de usuario
-app.use('/crud-mern-stack/api/usuario', router);
+app.use('/api/usuario', router);
 
 app.get('/', (req, res) =>{
     res.end('Bienvenidos');
