@@ -56,6 +56,8 @@ router.post('/actualizausuario', async (req, res) => {
             },
             { new: true } // Opción "new" para devolver el documento actualizado
         );
+        res.send(req.body.idUser);
+        res.send(updatedUser);
         if (!updatedUser) {
             return res.status(404).send('Usuario no encontrado');
         }
